@@ -1,0 +1,15 @@
+-------------------------------------------------------------------------------
+Test set: monprojet.dao.CountryRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.246 s <<< FAILURE! - in monprojet.dao.CountryRepositoryTest
+testPopulationPays  Time elapsed: 0.216 s  <<< ERROR!
+org.springframework.dao.InvalidDataAccessResourceUsageException: could not prepare statement; SQL [SELECT SUM(City.population) AS populationTotaleFROM CityINNER JOIN Country ON City.id = Country.id WHERE Country.id = ? ]; nested exception is org.hibernate.exception.SQLGrammarException: could not prepare statement
+	at monprojet.dao.CountryRepositoryTest.testPopulationPays(CountryRepositoryTest.java:53)
+Caused by: org.hibernate.exception.SQLGrammarException: could not prepare statement
+	at monprojet.dao.CountryRepositoryTest.testPopulationPays(CountryRepositoryTest.java:53)
+Caused by: org.h2.jdbc.JdbcSQLSyntaxErrorException: 
+Erreur de syntaxe dans l'instruction SQL "SELECT SUM(CITY.POPULATION) AS POPULATIONTOTALEFROM CITYINNER[*] JOIN COUNTRY ON CITY.ID = COUNTRY.ID WHERE COUNTRY.ID = ? "
+Syntax error in SQL statement "SELECT SUM(CITY.POPULATION) AS POPULATIONTOTALEFROM CITYINNER[*] JOIN COUNTRY ON CITY.ID = COUNTRY.ID WHERE COUNTRY.ID = ? "; SQL statement:
+SELECT SUM(City.population) AS populationTotaleFROM CityINNER JOIN Country ON City.id = Country.id WHERE Country.id = ?  [42000-200]
+	at monprojet.dao.CountryRepositoryTest.testPopulationPays(CountryRepositoryTest.java:53)
+
